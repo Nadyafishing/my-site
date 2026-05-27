@@ -35,9 +35,15 @@ export default function Navbar() {
 
       {menuOpen && (
         <div className="md:hidden bg-white border-t px-4 py-4 flex flex-col gap-4">
-          <Link href="/">Home</Link>
-          <Link href="/blog">Blog</Link>
-          <Link href="/about">About</Link>
+          <Link href="/" onClick={() => setMenuOpen(false)}>
+            Home
+          </Link>
+          <Link href="/blog" onClick={() => setMenuOpen(false)}>
+            Blog
+          </Link>
+          <Link href="/about" onClick={() => setMenuOpen(false)}>
+            About
+          </Link>
 
           <input
             type="text"
