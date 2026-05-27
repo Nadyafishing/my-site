@@ -4,7 +4,7 @@ export default function Hero() {
       className="relative h-[500px] bg-cover bg-center flex items-center justify-center"
       style={{
         backgroundImage:
-          "url('/hero1.jpg')",
+          "url(https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop)",
       }}
     >
       <div className="absolute inset-0 bg-black/50" />
@@ -25,5 +25,3 @@ export default function Hero() {
     </section>
   );
 }
-
-          /*"url(https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop)",*/
