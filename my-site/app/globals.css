@@ -16,6 +16,9 @@ a {
 * {
   box-sizing: border-box;
 }
+html {
+  overflow-y: scroll;
+}
 /*
 @import "tailwindcss";
 
