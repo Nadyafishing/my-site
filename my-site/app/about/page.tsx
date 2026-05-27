@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 export default function AboutPage() {
   return (
     <main>
-      <Navbar />
+      
 
       <section className="max-w-3xl mx-auto px-4 py-20">
         <h1 className="text-5xl font-bold mb-8">About Me</h1>
