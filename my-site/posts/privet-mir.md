@@ -2,6 +2,7 @@
 title: "Мой первый markdown пост"
 date: "2026-05-19"
 excerpt: "Я наконец сделала настоящий блог!"
+image: "/images/markdawn.jpg"
 ---
 
 # Привет!

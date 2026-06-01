@@ -26,6 +26,7 @@ export default function Home() {
               title={post.title}
               date={post.date}
               excerpt={post.excerpt}
+              image={post.image}
             />
           ))}
         </div>

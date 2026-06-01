@@ -22,6 +22,7 @@ export function getAllPosts() {
         title: string;
         date: string;
         excerpt: string;
+        image?: string;
       }),
     };
   });
@@ -43,6 +44,7 @@ export function getPostBySlug(slug: string) {
       title: string;
       date: string;
       excerpt: string;
+      image?: string;
     }),
   };
 }

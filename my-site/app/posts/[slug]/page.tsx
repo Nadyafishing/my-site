@@ -2,6 +2,7 @@ import { getPostBySlug } from "@/lib/posts";
 import { remark } from "remark";
 import html from "remark-html";
 import Link from "next/link";
+import Image from "next/image";
 
 type Props = {
   params: Promise<{
@@ -38,6 +39,16 @@ export default async function PostPage({ params }: Props) {
         <h1>{post.title}</h1>
 
         <p style={{ color: "#777" }}>{post.date}</p>
+
+        {post.image && (
+          <Image
+            src={post.image}
+            alt={post.title}
+            width={1200}
+            height={700}
+            className="w-full rounded-2xl my-8"
+          />
+        )}
 
         <hr style={{ margin: "20px 0" }} />
 
