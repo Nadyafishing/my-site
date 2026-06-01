@@ -11,11 +11,11 @@ export default function Hero() {
 
       <div className="relative z-10 text-center text-white px-4 max-w-3xl">
         <p className="uppercase tracking-[6px] text-sm mb-4">
-          Welcome to Nadia's Blog
+          Добро пожаловать в мой блог
         </p>
 
         <h1 className="text-5xl md:text-7xl font-bold mb-6">
-          Fishing & IT Journey
+          Рыбалка и все остальное
         </h1>
 
         <p className="text-lg md:text-2xl leading-relaxed">

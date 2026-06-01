@@ -8,7 +8,7 @@ export default function BlogPage() {
     <main>
       <section className="max-w-5xl mx-auto px-4 py-16">
         <h1 className="text-5xl font-bold mb-10">
-          Blog
+          Блог
         </h1>
 
         <div className="grid gap-8 md:grid-cols-2">
