@@ -164,6 +164,15 @@ export default function AboutPage() {
           </a>
         </div>
       </section>
+
+      <div className="text-center mt-12">
+        <a href="/" className="mr-6 hover:underline">
+          ← На главную
+        </a>
+
+        <a href="#">↑ Наверх</a>
+      </div>
+
     </main>
   );
 }
