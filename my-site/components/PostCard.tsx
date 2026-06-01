@@ -4,10 +4,10 @@ type Props = {
   slug: string;
   title: string;
   date: string;
-  content: string;
+  excerpt: string;
 };
 
-export default function PostCard({ slug, title, date, content }: Props) {
+export default function PostCard({ slug, title, date, excerpt }: Props) {
   return (
     <article className="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition">
       <Link href={`/posts/${slug}`}>
@@ -19,7 +19,7 @@ export default function PostCard({ slug, title, date, content }: Props) {
       <p className="text-gray-500 text-sm mb-4">{date}</p>
 
       <p className="text-gray-700 leading-relaxed">
-        {content.slice(0, 120)}...
+        {excerpt}
       </p>
     </article>
   );
