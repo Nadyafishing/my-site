@@ -1,6 +1,7 @@
 ---
 title: "Рыбалка на озере"
 date: "2026-05-24"
+category: "fishing"
 excerpt: "Не помню ни одной рыбалки на озере :D"
 image: "/images/ozero.jpg"
 ---

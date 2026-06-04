@@ -1,6 +1,7 @@
 ---
 title: "Как я начала путь рыболовный"
 date: "2026-05-20"
+category: "fishing"
 excerpt: "Помню было мне 10 лет!"
 image: "/images/nachalo.jpg"
 ---

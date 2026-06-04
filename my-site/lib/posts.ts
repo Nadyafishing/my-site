@@ -23,6 +23,7 @@ export function getAllPosts() {
         date: string;
         excerpt: string;
         image?: string;
+        category: string;
       }),
     };
   });
@@ -45,6 +46,13 @@ export function getPostBySlug(slug: string) {
       date: string;
       excerpt: string;
       image?: string;
+      category: string;
     }),
   };
+}
+
+export function getPostsByCategory(category: string) {
+  return getAllPosts().filter(
+    (post) => post.category === category
+  );
 }

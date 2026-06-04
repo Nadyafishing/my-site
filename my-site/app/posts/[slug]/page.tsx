@@ -15,6 +15,16 @@ export default async function PostPage({ params }: Props) {
 
   const post = getPostBySlug(slug);
 
+  const backLink =
+    post.category === "fishing"
+      ? "/fishing"
+      : "/personal";
+
+  const backText =
+    post.category === "fishing"
+      ? "← К разделу «Рыбалка»"
+      : "← К разделу «Личное»";
+
   const processedContent = await remark()
     .use(html)
     .process(post.content);
@@ -31,11 +41,12 @@ export default async function PostPage({ params }: Props) {
     >
       <article>
         <Link
-          href="/blog"
-          className="text-blue-600 hover:underline"
+          href={backLink}
+          className="inline-block px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition"
         >
-          ← Назад к блогу
+          {backText}
         </Link>
+
         <h1>{post.title}</h1>
 
         <p style={{ color: "#777" }}>{post.date}</p>
@@ -64,19 +75,21 @@ export default async function PostPage({ params }: Props) {
         <hr style={{ margin: "40px 0" }} />
 
         <div className="flex gap-6">
+
         <Link
-          href="/"
-          className="text-blue-600 hover:underline"
+          href={backLink}
+          className="px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition"
         >
-          ← На главную
+          {backText}
         </Link>
 
         <Link
-          href="/blog"
-          className="text-blue-600 hover:underline"
+          href="/"
+          className="px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition"
         >
-          К блогу →
+          Главная
         </Link>
+
       </div>
 
       </article>

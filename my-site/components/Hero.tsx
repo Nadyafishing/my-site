@@ -15,11 +15,11 @@ export default function Hero() {
         </p>
 
         <h1 className="text-5xl md:text-7xl font-bold mb-6">
-          Рыбалка и все остальное
+          Рыбалка и немного личного
         </h1>
 
         <p className="text-lg md:text-2xl leading-relaxed">
-          Рыбалка, путешествия, природа, разработка и путь в IT.
+          Рыбалка, путешествия, природа, разработка и путь к себе.
         </p>
       </div>
     </section>

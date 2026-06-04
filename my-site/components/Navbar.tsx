@@ -9,6 +9,11 @@ export default function Navbar() {
 
   const pathname = usePathname();
 
+  const linkClass = (href: string) =>
+    pathname === href
+      ? "font-semibold border-b-2 border-black pb-1"
+      : "hover:text-gray-600 transition";
+
   const handleMenuClick = (href: string) => {
     if (pathname === href) {
       window.scrollTo({
@@ -30,13 +35,35 @@ export default function Navbar() {
         </Link>
 
         <nav className="hidden md:flex gap-8 items-center">
-          <Link href="/" onClick={() => handleMenuClick("/")}>
+          <Link
+            href="/"
+            className={linkClass("/")}
+            onClick={() => handleMenuClick("/")}
+          >
             Главная
           </Link>
-          <Link href="/blog" onClick={() => handleMenuClick("/blog")}>
-            Блог
+
+          <Link
+            href="/fishing"
+            className={linkClass("/fishing")}
+            onClick={() => handleMenuClick("/fishing")}
+          >
+            Рыбалка
           </Link>
-          <Link href="/about" onClick={() => handleMenuClick("/about")}>
+
+          <Link
+            href="/personal"
+            className={linkClass("/personal")}
+            onClick={() => handleMenuClick("/personal")}
+          >
+            Личное
+          </Link>
+
+          <Link
+            href="/about"
+            className={linkClass("/about")}
+            onClick={() => handleMenuClick("/about")}
+          >
             Обо мне
           </Link>
 
@@ -68,13 +95,23 @@ export default function Navbar() {
           </Link>
 
           <Link
-            href="/blog"
+            href="/fishing"
             onClick={() => {
-              handleMenuClick("/blog");
+              handleMenuClick("/fishing");
               setMenuOpen(false);
             }}
           >
-            Блог
+            Рыбалка
+          </Link>
+
+          <Link
+            href="/personal"
+            onClick={() => {
+              handleMenuClick("/personal");
+              setMenuOpen(false);
+            }}
+          >
+            Личное
           </Link>
 
           <Link
