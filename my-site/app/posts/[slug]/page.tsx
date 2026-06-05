@@ -1,8 +1,12 @@
-import { getPostBySlug } from "@/lib/posts";
+import {
+  getPostBySlug,
+  getRelatedPosts,
+} from "@/lib/posts";
 import { remark } from "remark";
 import html from "remark-html";
 import Link from "next/link";
 import Image from "next/image";
+import PostCard from "@/components/PostCard";
 
 type Props = {
   params: Promise<{
@@ -14,6 +18,11 @@ export default async function PostPage({ params }: Props) {
   const { slug } = await params;
 
   const post = getPostBySlug(slug);
+
+  const relatedPosts = getRelatedPosts(
+    post.category,
+    post.slug
+  );
 
   const backLink =
     post.category === "fishing"
@@ -47,9 +56,13 @@ export default async function PostPage({ params }: Props) {
           {backText}
         </Link>
 
-        <h1>{post.title}</h1>
+        <h1 className="text-5xl font-bold mb-4">
+          {post.title}
+        </h1>
 
-        <p style={{ color: "#777" }}>{post.date}</p>
+        <p className="text-gray-500 mb-8">
+          {post.date}
+        </p>
 
         {post.image && (
           <Image
@@ -61,16 +74,77 @@ export default async function PostPage({ params }: Props) {
           />
         )}
 
+        {post.category === "fishing" && (
+          <div className="bg-gray-50 rounded-2xl p-6 my-8 border">
+            <div className="grid gap-3 sm:grid-cols-2">
+
+              {post.place && (
+                <div>
+                  <span className="font-semibold">📍 Место:</span> {post.place}
+                </div>
+              )}
+
+              {post.fish && (
+                <div>
+                  <span className="font-semibold">🐟 Рыба:</span> {post.fish}
+                </div>
+              )}
+
+              {post.rod && (
+                <div>
+                  <span className="font-semibold">🎣 Снасть:</span> {post.rod}
+                </div>
+              )}
+
+              {post.lure && (
+                <div>
+                  <span className="font-semibold">🪝 Приманка:</span> {post.lure}
+                </div>
+              )}
+
+              {post.weather && (
+                <div>
+                  <span className="font-semibold">☁️ Погода:</span> {post.weather}
+                </div>
+              )}
+
+              {post.result && (
+                <div>
+                  <span className="font-semibold">🏆 Результат:</span> {post.result}
+                </div>
+              )}
+
+            </div>
+          </div>
+        )}
+
+        {post.tags && post.tags.length > 0 && (
+          <div className="flex flex-wrap gap-3 my-8">
+            {post.tags.map((tag) => (
+              <Link
+                key={tag}
+                href={`/tag/${tag}`}
+                className="
+                  px-3 py-1
+                  rounded-full
+                  bg-blue-50
+                  hover:bg-blue-100
+                  text-sm
+                  transition
+                "
+                >
+                #{tag}
+              </Link>
+            ))}
+          </div>
+        )}
+
         <hr style={{ margin: "20px 0" }} />
 
         <div
           dangerouslySetInnerHTML={{ __html: contentHtml }}
-          style={{
-            lineHeight: "1.8",
-            fontSize: "18px",
-          }}
+          className="prose prose-lg max-w-none"
         />
-        <hr style={{ margin: "40px 0" }} />
 
         <hr style={{ margin: "40px 0" }} />
 
@@ -90,7 +164,29 @@ export default async function PostPage({ params }: Props) {
           Главная
         </Link>
 
-      </div>
+        </div>
+
+        {relatedPosts.length > 0 && (
+          <section className="mt-16">
+            <h2 className="text-2xl font-bold mb-6">
+              Похожие записи
+            </h2>
+
+            <div className="grid gap-6 md:grid-cols-2">
+              {relatedPosts.map((related) => (
+                <PostCard
+                  key={related.slug}
+                  slug={related.slug}
+                  title={related.title}
+                  date={related.date}
+                  excerpt={related.excerpt}
+                  image={related.image}
+                  //tags={related.tags}
+                  />
+              ))}
+            </div>
+          </section>
+        )}
 
       </article>
     </main>

@@ -7,13 +7,14 @@ type Props = {
   date: string;
   excerpt: string;
   image?: string;
+  tags?: string[];
 };
 
-export default function PostCard({ slug, title, date, excerpt, image }: Props) {
+export default function PostCard({ slug, title, date, excerpt, image, tags }: Props) {
   return (
     <Link href={`/posts/${slug}`} className="block">
 
-    <article className="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl hover:-translate-y-1 transition cursor-pointer">
+    <article className="h-full flex flex-col bg-white rounded-2xl shadow-md p-6 hover:shadow-xl hover:-translate-y-1 transition cursor-pointer">
     {image && (
       <Image
         src={image}
@@ -29,12 +30,32 @@ export default function PostCard({ slug, title, date, excerpt, image }: Props) {
 
       <p className="text-gray-500 text-sm mb-4">{date}</p>
 
-      <p className="text-gray-700 leading-relaxed">
-        {excerpt}
-      </p>
-      <p className="inline-block mt-4 px-4 py-2 rounded-full bg-gray-100">
-        Читать →
-      </p>
+      <div className="flex-grow">
+        <p className="text-gray-700 leading-relaxed">
+          {excerpt}
+        </p>
+      </div>
+
+      {tags && tags.length > 0 && (
+        <div className="flex flex-wrap gap-2 mt-4">
+          {tags.slice(0, 3).map((tag) => (
+            <span
+              key={tag}
+              className="
+                text-xs
+                px-3 py-1
+                rounded-full
+                bg-slate-100
+                text-slate-600
+                font-medium
+              "
+            >
+              #{tag}
+            </span>
+          ))}
+        </div>
+      )}
+
     </article>
     
     	</Link>

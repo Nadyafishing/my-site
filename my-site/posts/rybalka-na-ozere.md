@@ -4,6 +4,24 @@ date: "2026-05-24"
 category: "fishing"
 excerpt: "Не помню ни одной рыбалки на озере :D"
 image: "/images/ozero.jpg"
+
+video: "/videos/ozero.mp4"
+
+tags:
+  - щука
+  - спиннинг
+  - озеро
+
+shortHook: "Щука стояла совсем рядом с берегом"
+
+socialCaption: "Иногда лучший клёв бывает там, где меньше всего ожидаешь."
+
+place: "Много озеро"
+fish: "Нет"
+rod: "Спиннинг"
+lure: "Воблер"
+weather: "Облачно"
+result: "3 рыбы"
 ---
 
 # Привет!

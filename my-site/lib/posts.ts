@@ -24,6 +24,20 @@ export function getAllPosts() {
         excerpt: string;
         image?: string;
         category: string;
+
+        video?: string;
+
+        tags?: string[];
+
+        shortHook?: string;
+        socialCaption?: string;
+
+        place?: string;
+        fish?: string;
+        rod?: string;
+        lure?: string;
+        weather?: string;
+        result?: string;
       }),
     };
   });
@@ -47,6 +61,21 @@ export function getPostBySlug(slug: string) {
       excerpt: string;
       image?: string;
       category: string;
+
+      video?: string;
+
+      tags?: string[];
+
+      shortHook?: string;
+      socialCaption?: string;
+
+      place?: string;
+      fish?: string;
+      rod?: string;
+      lure?: string;
+      weather?: string;
+      result?: string;
+
     }),
   };
 }
@@ -54,5 +83,25 @@ export function getPostBySlug(slug: string) {
 export function getPostsByCategory(category: string) {
   return getAllPosts().filter(
     (post) => post.category === category
+  );
+}
+export function getRelatedPosts(
+  category: string,
+  currentSlug: string
+) {
+  return getAllPosts()
+    .filter(
+      (post) =>
+        post.category === category &&
+        post.slug !== currentSlug
+    )
+    .slice(0, 3);
+}
+
+export function getPostsByTag(tag: string) {
+  return getAllPosts().filter((post) =>
+    post.tags?.some(
+      (t) => t.toLowerCase() === tag.toLowerCase()
+    )
   );
 }

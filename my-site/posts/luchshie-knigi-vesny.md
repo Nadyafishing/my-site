@@ -4,6 +4,14 @@ date: "2026-05-22"
 category: "personal"
 excerpt: "Перчитала много, посоветую не все!"
 image: "/images/audioknigi.jpg"
+
+tags:
+  - книги
+  - кругозор
+  - блог
+
+weather: "Облачно"
+result: "Расширение кругозора"
 ---
 
 # Привет!

@@ -36,6 +36,7 @@ export default function Home() {
               date={post.date}
               excerpt={post.excerpt}
               image={post.image}
+              tags={post.tags}
             />
           ))}
         </div>
@@ -53,6 +54,7 @@ export default function Home() {
               date={post.date}
               excerpt={post.excerpt}
               image={post.image}
+              tags={post.tags}
             />
           ))}
         </div>

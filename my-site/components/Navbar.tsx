@@ -67,11 +67,9 @@ export default function Navbar() {
             Обо мне
           </Link>
 
-          <input
-            type="text"
-            placeholder="Поиск"
-            className="border rounded-full px-4 py-2"
-          />
+          <Link href="/search">
+            Поиск
+          </Link>
         </nav>
 
         <button
@@ -124,11 +122,9 @@ export default function Navbar() {
             Обо мне
           </Link>
 
-          <input
-            type="text"
-            placeholder="Поиск"
-            className="border rounded-full px-4 py-2"
-          />
+          <Link href="/search">
+            Поиск
+          </Link>
         </div>
       )}
     </header>

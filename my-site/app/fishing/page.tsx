@@ -20,6 +20,7 @@ export default function FishingPage() {
               date={post.date}
               excerpt={post.excerpt}
               image={post.image}
+              tags={post.tags}
             />
           ))}
         </div>
