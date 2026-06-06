@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import {
   getPostBySlug,
   getRelatedPosts,
@@ -7,6 +8,36 @@ import html from "remark-html";
 import Link from "next/link";
 import Image from "next/image";
 import PostCard from "@/components/PostCard";
+
+export async function generateMetadata({
+  params,
+}: Props): Promise<Metadata> {
+  const { slug } = await params;
+
+  const post = getPostBySlug(slug);
+
+  return {
+    title: post.title,
+    description: post.excerpt,
+
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+
+      images: post.image
+        ? [
+            {
+              url: post.image,
+            },
+          ]
+        : [
+            {
+              url: "/images/og-cover.jpg",
+            },
+          ],
+    },
+  };
+  }
 
 type Props = {
   params: Promise<{
@@ -26,12 +57,12 @@ export default async function PostPage({ params }: Props) {
 
   const backLink =
     post.category === "fishing"
-      ? "/fishing"
+      ? "/"
       : "/personal";
 
   const backText =
     post.category === "fishing"
-      ? "← К разделу «Рыбалка»"
+      ? "← На главную"
       : "← К разделу «Личное»";
 
   const processedContent = await remark()
@@ -155,13 +186,6 @@ export default async function PostPage({ params }: Props) {
           className="px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition"
         >
           {backText}
-        </Link>
-
-        <Link
-          href="/"
-          className="px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition"
-        >
-          Главная
         </Link>
 
         </div>

@@ -1,5 +1,14 @@
+import { Metadata } from "next";
+
 import PostCard from "@/components/PostCard";
 import { getPostsByCategory } from "@/lib/posts";
+
+export const metadata: Metadata = {
+  title: "Личные заметки",
+
+  description:
+    "Книги, программирование Oracle, рисунки, путешествия и заметки из жизни.",
+};
 
 export default function PersonalPage() {
   const posts = getPostsByCategory("personal");

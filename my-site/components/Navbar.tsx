@@ -44,14 +44,6 @@ export default function Navbar() {
           </Link>
 
           <Link
-            href="/fishing"
-            className={linkClass("/fishing")}
-            onClick={() => handleMenuClick("/fishing")}
-          >
-            Рыбалка
-          </Link>
-
-          <Link
             href="/personal"
             className={linkClass("/personal")}
             onClick={() => handleMenuClick("/personal")}
@@ -90,16 +82,6 @@ export default function Navbar() {
             }}
           >
             Главная
-          </Link>
-
-          <Link
-            href="/fishing"
-            onClick={() => {
-              handleMenuClick("/fishing");
-              setMenuOpen(false);
-            }}
-          >
-            Рыбалка
           </Link>
 
           <Link

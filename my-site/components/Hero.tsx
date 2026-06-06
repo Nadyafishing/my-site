@@ -1,7 +1,7 @@
 export default function Hero() {
   return (
     <section
-      className="relative h-[500px] bg-cover bg-center flex items-center justify-center"
+      className="relative h-[300px] bg-cover bg-center flex items-center justify-center"
       style={{
         backgroundImage:
           "url(https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop)",
@@ -15,11 +15,11 @@ export default function Hero() {
         </p>
 
         <h1 className="text-5xl md:text-7xl font-bold mb-6">
-          Рыбалка и немного личного
+          О рыбалке
         </h1>
 
         <p className="text-lg md:text-2xl leading-relaxed">
-          Рыбалка, путешествия, природа, разработка и путь к себе.
+          и немного личного
         </p>
       </div>
     </section>

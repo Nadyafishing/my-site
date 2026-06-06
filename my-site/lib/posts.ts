@@ -105,3 +105,23 @@ export function getPostsByTag(tag: string) {
     )
   );
 }
+
+export function getAllFishingTags() {
+  const posts = getPostsByCategory("fishing");
+
+  const tags = posts.flatMap(
+    (post) => post.tags || []
+  );
+
+  return [...new Set(tags)].sort();
+}
+
+export function getAllTags() {
+  const posts = getAllPosts();
+
+  const tags = posts.flatMap(
+    (post) => post.tags || []
+  );
+
+  return [...new Set(tags)].sort();
+}

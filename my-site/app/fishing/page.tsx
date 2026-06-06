@@ -1,5 +1,13 @@
+import { Metadata } from "next";
 import PostCard from "@/components/PostCard";
 import { getPostsByCategory } from "@/lib/posts";
+
+export const metadata: Metadata = {
+  title: "Рыбалка на Черном море и горных реках",
+
+  description:
+    "Отчёты о рыбалке на Черном море и горных реках Кавказа. Форель, голавль, ставрида, сарган, приманки и личный опыт спиннингиста.",
+};
 
 export default function FishingPage() {
   const posts = getPostsByCategory("fishing");

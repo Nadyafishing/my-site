@@ -1,4 +1,13 @@
+import { Metadata } from "next";
+
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "О Наде Черной",
+
+  description:
+    "Разработчик Oracle, рыболов-спиннингист и автор блога о рыбалке на Черном море и горных реках Кавказа.",
+};
 
 export default function AboutPage() {
   return (

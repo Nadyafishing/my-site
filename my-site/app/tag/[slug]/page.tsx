@@ -1,3 +1,5 @@
+import { Metadata } from "next";
+import { tagTitles } from "@/data/tagTitles";
 import PostCard from "@/components/PostCard";
 import { getPostsByTag } from "@/lib/posts";
 
@@ -6,6 +8,26 @@ type Props = {
     slug: string;
   }>;
 };
+
+export async function generateMetadata({
+  params,
+}: Props): Promise<Metadata> {
+
+  const { slug } = await params;
+
+  const tag = decodeURIComponent(slug);
+
+  const seoTitle =
+    tagTitles[tag] ||
+    `${tag} — отчёты о рыбалке`;
+
+  return {
+    title: `${seoTitle} | Надя Черная`,
+
+    description:
+      `Все записи по теме "${tag}".`,
+  };
+}
 
 export default async function TagPage({
   params,
