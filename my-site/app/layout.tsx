@@ -15,7 +15,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nadyachernaya.ru"),
+  metadataBase: new URL("https://my-site-pink-chi.vercel.app.ru"),
 
   title: {
     default: "Надя Черная",
