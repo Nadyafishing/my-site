@@ -4,10 +4,10 @@ import { getAllTags } from "@/lib/posts";
 
 import {
   fishTags,
-  placeTags,
-  seasonTags,
+  locationTags,
+  monthTags,
   lureTags,
-  techniqueTags,
+  styleTags,
 } from "@/data/fishingTags";
 
 export default function FishingTopics() {
@@ -17,15 +17,15 @@ export default function FishingTopics() {
     allTags.includes(tag)
   );
 
-  const places = placeTags.filter((tag) =>
+  const places = locationTags.filter((tag) =>
     allTags.includes(tag)
   );
 
-  const seasons = seasonTags.filter((tag) =>
+  const seasons = monthTags.filter((tag) =>
     allTags.includes(tag)
   );
 
-  const technique = techniqueTags.filter((tag) =>
+  const technique = styleTags.filter((tag) =>
     allTags.includes(tag)
   );
 

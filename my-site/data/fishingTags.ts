@@ -7,12 +7,21 @@ export const fishTags = [
   "ласкирь",
   "каменный окунь",
   "собачка",
+  "сарган",
 ];
 
-export const placeTags = [
+export const waterTags = [
+  "море",
+  "река",
+  "озеро",
+];
+
+export const locationTags = [
   "Черное море",
   "горная река",
-  "озеро",
+  "Абхазия",
+  "Туапсе",
+  "Скала Киселева",
 ];
 
 export const lureTags = [
@@ -24,13 +33,21 @@ export const lureTags = [
   "пилькер",
 ];
 
-export const techniqueTags = [
-  "джиг",
+export const styleTags = [
   "микроджиг",
   "мормышинг",
+  "джиг",
+  "ультралайт",
 ];
 
 export const seasonTags = [
+  "весна",
+  "лето",
+  "осень",
+  "зима",
+];
+
+export const monthTags  = [
   "январь",
   "февраль",
   "март",

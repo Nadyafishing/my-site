@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { tagTitles } from "@/data/tagTitles";
 import PostCard from "@/components/PostCard";
 import { getPostsByTag } from "@/lib/posts";
+import { tagDescriptions } from "@/data/tagDescriptions";
 
 type Props = {
   params: Promise<{
@@ -38,11 +39,19 @@ export default async function TagPage({
 
   const posts = getPostsByTag(tag);
 
+  const tagInfo = tagDescriptions[tag];
+
   return (
     <main className="max-w-5xl mx-auto px-4 py-16">
-      <h1 className="text-5xl font-bold mb-10">
-        #{tag}
+      <h1 className="text-5xl font-bold mb-4">
+        {tagInfo?.title || `#${tag}`}
       </h1>
+
+      {tagInfo && (
+        <p className="text-gray-600 text-lg mb-8">
+          {tagInfo.description}
+        </p>
+      )}
 
       <p className="text-gray-500 mb-8">
         Найдено записей: {posts.length}
